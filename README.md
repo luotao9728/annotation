@@ -15,3 +15,16 @@
 3. Alternatively, you could directly create a new working conda environment using the following command 
 (make sure you have annotation.yml file in your working directory):
 > conda env create -n annotation --file annotation.yml
+
+### Requirements for input files
+1. Reference genome: fasta/fna
+2. illumina RNA-seq (forward/reverse): fastq
+3. PacBio RNA-seq: fastq
+4. Reference annotation: gtf
+
+### Instruction for the pipeline
+1. Make sure you have the environment (with all packages) ready.
+2. Make sure you have all the input files ready.
+3. Execute the command:
+> bash annotation.sh ref_genome.fna illumina_seq_forward.fastq illumina_seq_reverse.fastq PacBio_seq.fastq ref_annotaion.gtf
+4. Be patient. The annotation process may take a long time. Have a great day! :)
