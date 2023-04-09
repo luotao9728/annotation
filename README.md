@@ -25,6 +25,6 @@
 ### Instruction for the pipeline
 1. Make sure you have the environment (with all packages) ready.
 2. Make sure you have all the input files ready.
-3. Execute the command:
-> bash annotation.sh ref_genome.fna illumina_seq_forward.fastq illumina_seq_reverse.fastq PacBio_seq.fastq ref_annotaion.gtf
+3. Execute the command and follow the prompt:
+> ./annotation.sh
 4. Be patient. The annotation process may take a long time. Have a great day! :)
