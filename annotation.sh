@@ -1,6 +1,14 @@
 #!/bin/bash
 
-read ref_genome ill_for ill_rev pacbio ref_annotation
+# Take inputs
+echo "Please enter the file name with the following prompts:"
+
+read -p "Reference genome (fasta/fna): " ref_genome
+read -p "illumina RNA-seq (forward): " ill_for
+read -p "illumina RNA-seq (reverse): " ill_rev
+read -p "PacBio RNA-seq: " pacbio
+read -p "Reference annotation" ref_annotation
+
 
 echo "The file name of reference genome is: $ref_genome"
 echo "The file name of illumina RNA-seq (forward) is: $ill_for"
@@ -8,6 +16,7 @@ echo "The file name of illumina RNA-seq (reverse) is: $ill_rev"
 echo "The file name of PacBio RNA-seq is: $pacbio"
 echo "The file name of reference annotation is: $ref_annotation"
 
+# Start pipeline
 echo "Start annotaion pipeline!"
 
 echo "Start trimming illumina RNA-seq!"
