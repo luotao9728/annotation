@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Take inputs
+echo "**************************************************************"
 echo "Please enter the file name with the following prompts:"
-
 read -p "Reference genome (fasta/fna): " ref_genome
-read -p "illumina RNA-seq (forward): " ill_for
-read -p "illumina RNA-seq (reverse): " ill_rev
-read -p "PacBio RNA-seq: " pacbio
-read -p "Reference annotation" ref_annotation
-
+read -p "illumina RNA-seq forward (fastq): " ill_for
+read -p "illumina RNA-seq reverse (fastq): " ill_rev
+read -p "PacBio RNA-seq (fastq): " pacbio
+read -p "Reference annotation (gtf): " ref_annotation
+echo "**************************************************************"
 
 echo "The file name of reference genome is: $ref_genome"
 echo "The file name of illumina RNA-seq (forward) is: $ill_for"
