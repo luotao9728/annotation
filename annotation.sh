@@ -6,12 +6,14 @@
 
 # activate local batch environment
 source ~/.bashrc
+
 echo "*******************************************************************************************"
 echo "Bash environment activated!"
 echo "*******************************************************************************************"
 
 # activate conda environment for the pipeline
 conda activate annotation
+
 echo "*******************************************************************************************"
 echo "Conda environment activated!"
 echo "*******************************************************************************************"
@@ -23,10 +25,12 @@ cd /ocean/projects/bio230007p/tluo1/data_processing_new
 echo "*******************************************************************************************"
 echo "Start trimming illumina short RNA-seq!"
 echo "*******************************************************************************************"
+
 trimmomatic PE -phred33 liver_illumina_R1.fastq liver_illumina_R2.fastq trimmed_liver_illumina_R1.fastq output_forward_unpaired.fq.gz trimmed_liver_illumina_R2.fastq output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
 
 rm output_forward_unpaired.fq.gz
 rm output_reverse_unpaired.fq.gz
+
 echo "*******************************************************************************************"
 echo "Finish trimming illumina short RNA-seq!"
 echo "*******************************************************************************************"
@@ -80,6 +84,19 @@ magicblast -query trimmed_liver_illumina_R2.fastq -db horse_reference -infmt fas
 
 echo "*******************************************************************************************"
 echo "Finish alignments!"
+echo "*******************************************************************************************"
+
+# SamTools
+echo "*******************************************************************************************"
+echo "Start converting SAM files to BAM files"
+echo "*******************************************************************************************"
+
+samtools view -S -b liver_align_illumina_R1.sam > liver_align_illumina_R1.bam
+samtools view -S -b liver_align_illumina_R2.sam > liver_align_illumina_R2.bam
+samtools view -S -b liver_align_pacbio.sam > liver_align_pacbio.bam
+
+echo "*******************************************************************************************"
+echo "Finish converting SAM files to BAM files"
 echo "*******************************************************************************************"
 
 # deactivate conda environment
