@@ -86,17 +86,31 @@ echo "**************************************************************************
 echo "Finish alignments!"
 echo "*******************************************************************************************"
 
+# change direction to alignment files location
+cd alignments
+
 # SamTools
 echo "*******************************************************************************************"
-echo "Start converting SAM files to BAM files"
+echo "Start converting SAM files to BAM files!"
 echo "*******************************************************************************************"
 
-samtools view -S -b liver_align_illumina_R1.sam > liver_align_illumina_R1.bam
-samtools view -S -b liver_align_illumina_R2.sam > liver_align_illumina_R2.bam
-samtools view -S -b liver_align_pacbio.sam > liver_align_pacbio.bam
+samtools sort liver_align_illumina_R1.sam -o liver_align_illumina_R1.bam
+samtools sort liver_align_illumina_R2.sam -o liver_align_illumina_R2.bam
+samtools sort liver_align_pacbio.sam -o liver_align_pacbio.bam
 
 echo "*******************************************************************************************"
-echo "Finish converting SAM files to BAM files"
+echo "Finish converting SAM files to BAM files!"
+echo "*******************************************************************************************"
+
+# Stringtie
+echo "*******************************************************************************************"
+echo "Start annotaion!"
+echo "*******************************************************************************************"
+
+stringtie --mix -G ../ref_annotation.gtf -o ../new_annotation.gtf liver_align_illumina_R1.bam liver_align_illumina_R2.bam liver_align_pacbio.bam
+
+echo "*******************************************************************************************"
+echo "Finish annotation!"
 echo "*******************************************************************************************"
 
 # deactivate conda environment
