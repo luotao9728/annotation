@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH -N 4
-#SBATCH -p RM
-#SBATCH -t 40:00:00
-#SBATCH --ntasks-per-node=128
+#SBATCH -p RM-shared
+#SBATCH -t 30:00:00
+#SBATCH --ntasks-per-node=64
+#SBATCH -J index
 
 # activate local batch environment
 source ~/.bashrc
