@@ -22,10 +22,13 @@
 2. illumina RNA-seq (forward/reverse): fastq
 3. PacBio RNA-seq: fastq
 4. Reference annotation: gtf
+5. Keyword: name of this annotation
 
 ### Instruction for the pipeline
 1. Make sure you have the environment (with all packages) ready.
 2. Make sure you have all the input files ready.
-3. Execute the command and follow the prompt:
-> ./annotation.sh
-4. Be patient. The annotation process may take a long time. Have a great day! :)
+3. Download these 3 bash files into the same directory as the data
+4. Execute the command and follow the prompt:
+> bash start_pipeline.sh
+5. Follow the instructions to enter the file names.
+6. Be patient. The annotation process may take a long time. Have a great day! :)
