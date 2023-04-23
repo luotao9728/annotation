@@ -82,7 +82,7 @@ echo "**************************************************************************
 echo "*******************************************************************************************"
 echo "Start annotaion!"
 
-stringtie --mix -G ../"reference_annotation" -o ../"$keyword"_annotation.gtf "$keyword"_aligned_illumina_R1.bam "$keyword"_aligned_illumina_R2.bam "$keyword"_aligned_pacbio.bam
+stringtie --mix -G ../"$reference_annotation" -o ../"$keyword"_annotation.gtf "$keyword"_aligned_illumina_R1.bam "$keyword"_aligned_illumina_R2.bam "$keyword"_aligned_pacbio.bam
 
 echo "Finish annotation!"
 echo "*******************************************************************************************"
