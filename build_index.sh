@@ -20,12 +20,13 @@ cd $3
 mkdir alignments
 cd alignments
 mkdir "$keyword"_index
+cd "$keyword"_index
 
 # build index
 echo "*******************************************************************************************"
 echo "Start building index from reference genome!"
 
-hisat2-build -p 64 ../"$reference_genome" "$keyword"_index "$keyword"_genome
+hisat2-build -p 64 ../../"$reference_genome" $keyword
 
 echo "Start building index from reference genome!"
 echo "*******************************************************************************************"
