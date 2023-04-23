@@ -8,7 +8,8 @@
 2. Make sure in your current working environment has the following packages:
 * Trimmomatic
 * LoRDEC
-* Magic-BLAST
+* hisat2
+* seqtk
 * SamTool
 * StringTie
 * Salmon
