@@ -26,6 +26,7 @@ cd $7
 echo "*******************************************************************************************"
 echo "Start trimming illumina short RNA-seq!"
 
+wget https://github.com/timflutre/trimmomatic/blob/master/adapters/TruSeq3-PE.fa
 trimmomatic PE -phred33 $forward_short_reads $reverse_short_reads trimmed_"$keyword"_illumina_R1.fastq output_forward_unpaired.fq.gz trimmed_"$keyword"_illumina_R2.fastq output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
 seqtk seq -a trimmed_"$keyword"_illumina_R1.fastq > trimmed_"$keyword"_illumina_R1.fa
 seqtk seq -a trimmed_"$keyword"_illumina_R2.fastq > trimmed_"$keyword"_illumina_R2.fa
