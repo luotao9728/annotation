@@ -27,7 +27,8 @@
 ### Instruction for the pipeline
 1. Make sure you have the environment (with all packages) ready.
 2. Make sure you have all the input files ready.
-3. Download these 3 bash files into the same directory as the data
+3. Download these 3 bash files into the same directory as the data.
+> start_pipeline.sh, build_index.sh, pipeline.sh
 4. Execute the command and follow the prompt:
 > bash start_pipeline.sh
 5. Follow the instructions to enter the file names.
