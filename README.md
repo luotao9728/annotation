@@ -4,7 +4,7 @@
 
 
 ### Prepare the environment
-1. Make sure Anaconda3 is installed in your computer
+1. Make sure Anaconda3 is installed on your computer
 2. Make sure in your current working environment has the following packages:
 * Trimmomatic
 * LoRDEC
