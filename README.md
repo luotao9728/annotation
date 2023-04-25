@@ -7,12 +7,12 @@
 1. Make sure Anaconda3 is installed on your computer
 2. Make sure in your current working environment has the following packages:
 * Trimmomatic &emsp; (Trim illumina short reads)
-* LoRDEC          (Fix long reads by short reads)
-* hisat2          (Alignment)
-* seqtk           (Convert FASTA and FASTQ format)
-* SamTool         (Sort and Convert sam to bam)
-* StringTie       (Annotation)
-* Salmon          (Quantify expression)
+* LoRDEC &emsp; (Fix long reads by short reads)
+* hisat2       &emsp;   (Alignment)
+* seqtk      &emsp;     (Convert FASTA and FASTQ format)
+* SamTool     &emsp;    (Sort and Convert sam to bam)
+* StringTie    &emsp;   (Annotation)
+* Salmon       &emsp;   (Quantify expression)
 3. Alternatively, you could directly create a new working conda environment using the following command 
 (make sure you have annotation.yml file in your working directory):
 > wget https://github.com/luotao9728/03713_team2_BDIP/blob/main/annotation.yml
