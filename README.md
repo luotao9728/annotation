@@ -18,6 +18,7 @@
 > wget https://github.com/luotao9728/03713_team2_BDIP/blob/main/annotation.yml
 > 
 > conda env create -n annotation --file annotation.yml
+> 
 > conda activate annotation
 
 ### Requirements for input files
