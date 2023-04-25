@@ -6,13 +6,13 @@
 ### Prepare the environment
 1. Make sure Anaconda3 is installed on your computer
 2. Make sure in your current working environment has the following packages:
-* Trimmomatic
-* LoRDEC
-* hisat2
-* seqtk
-* SamTool
-* StringTie
-* Salmon
+* Trimmomatic     (Trim illumina short reads)
+* LoRDEC          (Fix long reads by short reads)
+* hisat2          (Alignment)
+* seqtk           (Convert FASTA and FASTQ format)
+* SamTool         (Sort and Convert sam to bam)
+* StringTie       (Annotation)
+* Salmon          (Quantify expression)
 3. Alternatively, you could directly create a new working conda environment using the following command 
 (make sure you have annotation.yml file in your working directory):
 > wget https://github.com/luotao9728/03713_team2_BDIP/blob/main/annotation.yml
