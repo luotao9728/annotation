@@ -59,9 +59,9 @@ echo "**************************************************************************
 echo "Start alignment"
 
 cd alignments
-hisat2 -f -x "$keyword"_index -U ../"$keyword"_pacbio_lordec_corrected.fasta -S "$keyword"_aligned_pacbio.sam
-hisat2 -f -x "$keyword"_index -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
-hisat2 -f -x "$keyword"_index -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
+hisat2 -f -x "$keyword"_index/"$keyword" -U ../"$keyword"_pacbio_lordec_corrected.fasta -S "$keyword"_aligned_pacbio.sam
+hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
+hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
 
 echo "Finish alignment!"
 echo "*******************************************************************************************"
