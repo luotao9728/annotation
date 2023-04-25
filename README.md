@@ -6,8 +6,8 @@
 ### Prepare the environment
 1. Make sure Anaconda3 is installed on your computer
 2. Make sure in your current working environment has the following packages:
-* Trimmomatic     (Trim illumina short reads)
-* LoRDEC          (Fix long reads by short reads)
+* Trimmomatic     *Tabspace(Trim illumina short reads)
+* LoRDEC          *Tabspace(Fix long reads by short reads)
 * hisat2          (Alignment)
 * seqtk           (Convert FASTA and FASTQ format)
 * SamTool         (Sort and Convert sam to bam)
