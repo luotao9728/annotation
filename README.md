@@ -4,6 +4,7 @@
 
 ### Prepare the directory
 > git clone https://github.com/luotao9728/annotation   
+
 This directory contains files:  
 start_pipeline.sh, build_index.sh, pipeline.sh, annotation.yml
 
