@@ -3,7 +3,7 @@
 ## Team-2: Taylor Ayers, Tao Luo, Lilin Huang, Sarah Oladejo
 
 ### Prepare the directory
-> git clone https://github.com/luotao9728/annotation
+> git clone https://github.com/luotao9728/annotation   
 This directory contains files:  
 start_pipeline.sh, build_index.sh, pipeline.sh, annotation.yml
 
