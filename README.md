@@ -6,7 +6,7 @@
 > git clone https://github.com/luotao9728/annotation   
 
 This directory contains files:  
-start_pipeline.sh, build_index.sh, pipeline.sh, annotation.yml
+start_pipeline.sh, build_index.sh, pipeline.sh, annotation.yml, TruSeq3-PE.fa
 
 ### Prepare the environment
 1. Make sure Anaconda3 is installed on your computer
