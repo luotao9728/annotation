@@ -26,7 +26,6 @@ cd $7
 echo "*******************************************************************************************"
 echo "Start trimming illumina short RNA-seq!"
 
-# trimmomatic PE -phred33 $forward_short_reads $reverse_short_reads trimmed_"$keyword"_illumina_R1.fastq output_forward_unpaired.fq.gz trimmed_"$keyword"_illumina_R2.fastq output_reverse_unpaired.fq.gz ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:3 TRAILING:3 MINLEN:36
 sickle pe -f $forward_short_reads -r $reverse_short_reads -t sanger -o trimmed_"$keyword"_illumina_R1.fastq -p trimmed_"$keyword"_illumina_R2.fastq -s temp.fastq
 seqtk seq -a trimmed_"$keyword"_illumina_R1.fastq > trimmed_"$keyword"_illumina_R1.fa
 seqtk seq -a trimmed_"$keyword"_illumina_R2.fastq > trimmed_"$keyword"_illumina_R2.fa
@@ -58,11 +57,8 @@ echo "**************************************************************************
 echo "*******************************************************************************************"
 echo "Start alignment"
 
-# sbatch minimap.sh $reference_genome $keyword $7
 minimap2 -a $reference_genome trim_split_"$keyword"_pacbio.fasta > alignments/"$keyword"_aligned_pacbio.sam
 cd alignments
-# hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
-# hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
 hisat2 -f -x "$keyword"_index/"$keyword" -1 ../trimmed_"$keyword"_illumina_R1.fa -2 ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina.sam
 
 echo "Finish alignment!"
