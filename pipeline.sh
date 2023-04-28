@@ -59,7 +59,7 @@ echo "**************************************************************************
 echo "Start alignment"
 
 # sbatch minimap.sh $reference_genome $keyword $7
-minimap2 -a $reference_genome trim_split_"$keyword"_pacbio.fasta > "$keyword"_aligned_pacbio.sam
+minimap2 -a $reference_genome trim_split_"$keyword"_pacbio.fasta > alignments/"$keyword"_aligned_pacbio.sam
 cd alignments
 # hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
 # hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
