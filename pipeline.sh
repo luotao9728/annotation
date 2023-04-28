@@ -22,7 +22,7 @@ echo "Conda environment activated!"
 # change direction to data location
 cd $7
 
-# Trimmomatic
+# sickle
 echo "*******************************************************************************************"
 echo "Start trimming illumina short RNA-seq!"
 
