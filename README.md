@@ -13,7 +13,8 @@ start_pipeline.sh, build_index.sh, pipeline.sh, annotation.yml, TruSeq3-PE.fa
 2. Make sure in your current working environment has the following packages:
 * Trimmomatic &emsp; (Trim illumina short reads)
 * LoRDEC &emsp; (Fix long reads by short reads)
-* hisat2       &emsp;   (Alignment)
+* hisat2       &emsp;   (Short RNA-seq Alignment)
+* minimap2       &emsp;   (Long RNA-seq Alignment)
 * seqtk      &emsp;     (Convert FASTA and FASTQ format)
 * SamTool     &emsp;    (Sort and Convert sam to bam)
 * StringTie    &emsp;   (Annotation)
