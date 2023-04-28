@@ -9,15 +9,13 @@ This directory contains files:
 * start_pipeline.sh
 * build_index.sh
 * pipeline.sh
-* minimap.sh
 * annotation.yml
-* TruSeq3-PE.fa
 * README.md
 
 ### Prepare the environment
 1. Make sure Anaconda3 is installed on your computer
 2. Make sure in your current working environment has the following packages:
-* Trimmomatic &emsp; (Trim illumina short reads)
+* sickle-trim &emsp; (Trim illumina short reads)
 * LoRDEC &emsp; (Fix long reads by short reads)
 * hisat2       &emsp;   (Short RNA-seq Alignment)
 * minimap2       &emsp;   (Long RNA-seq Alignment)
@@ -35,7 +33,7 @@ This directory contains files:
 1. Reference genome: fasta/fna
 2. illumina RNA-seq (forward/reverse): fastq
 3. PacBio RNA-seq: fastq
-4. Reference annotation: gtf
+4. Reference annotation: gff
 5. Keyword: name of this annotation
 The input files should be in the annotation directory
 
