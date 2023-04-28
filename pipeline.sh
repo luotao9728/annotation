@@ -58,7 +58,8 @@ echo "**************************************************************************
 echo "*******************************************************************************************"
 echo "Start alignment"
 
-sbatch minimap.sh $reference_genome $keyword $7
+# sbatch minimap.sh $reference_genome $keyword $7
+minimap2 -a $reference_genome trim_split_"$keyword"_pacbio.fasta > "$keyword"_aligned_pacbio.sam
 cd alignments
 # hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
 # hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
@@ -71,8 +72,8 @@ echo "**************************************************************************
 echo "*******************************************************************************************"
 echo "Start converting SAM files to BAM files!"
 
-samtools sort "$keyword"_aligned_illumina_R1.sam -o "$keyword"_aligned_illumina_R1.bam
-samtools sort "$keyword"_aligned_illumina_R2.sam -o "$keyword"_aligned_illumina_R2.bam
+samtools sort "$keyword"_aligned_illumina.sam -o "$keyword"_aligned_illumina.bam
+samtools sort "$keyword"_aligned_pacbio.sam -o "$keyword"_aligned_pacbio.bam
 
 echo "Finish converting SAM files to BAM files!"
 echo "*******************************************************************************************"
@@ -81,7 +82,7 @@ echo "**************************************************************************
 echo "*******************************************************************************************"
 echo "Start annotaion!"
 
-stringtie --mix -G ../"$reference_annotation" -o ../"$keyword"_annotation.gtf "$keyword"_aligned_illumina_R1.bam "$keyword"_aligned_illumina_R2.bam "$keyword"_aligned_pacbio.bam
+stringtie --mix -G ../"$reference_annotation" -o ../"$keyword"_annotation.gtf "$keyword"_aligned_illumina.bam "$keyword"_aligned_pacbio.bam
 
 echo "Finish annotation!"
 echo "*******************************************************************************************"
