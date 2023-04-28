@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p RM-shared
-#SBATCH -t 30:00:00
+#SBATCH -t 10:00:00
 #SBATCH --ntasks-per-node=64
 
 # store inputs
@@ -59,7 +59,7 @@ echo "**************************************************************************
 echo "Start alignment"
 
 cd alignments
-hisat2 -f -x "$keyword"_index/"$keyword" -U ../"$keyword"_pacbio_lordec_corrected.fasta -S "$keyword"_aligned_pacbio.sam
+sbatch minimap.sh $reference_genome $keyword $7
 hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R1.fa -S "$keyword"_aligned_illumina_R1.sam
 hisat2 -f -x "$keyword"_index/"$keyword" -U ../trimmed_"$keyword"_illumina_R2.fa -S "$keyword"_aligned_illumina_R2.sam
 
@@ -72,7 +72,6 @@ echo "Start converting SAM files to BAM files!"
 
 samtools sort "$keyword"_aligned_illumina_R1.sam -o "$keyword"_aligned_illumina_R1.bam
 samtools sort "$keyword"_aligned_illumina_R2.sam -o "$keyword"_aligned_illumina_R2.bam
-samtools sort "$keyword"_aligned_pacbio.sam -o "$keyword"_aligned_pacbio.bam
 
 echo "Finish converting SAM files to BAM files!"
 echo "*******************************************************************************************"
