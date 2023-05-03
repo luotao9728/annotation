@@ -7,7 +7,6 @@
   <br>
   <sub><sup><b>Team-2: Taylor Ayers, Tao Luo, Lilin Huang, Sarah Oladejo</b></sup></sub>
   <br>
-
 </h1>
 
 ### Prepare the directory
