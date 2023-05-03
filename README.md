@@ -29,7 +29,6 @@ This directory contains files:
 * seqtk      &emsp;     (Convert FASTA and FASTQ format)
 * SamTool     &emsp;    (Sort and Convert sam to bam)
 * StringTie    &emsp;   (Annotation)
-* Salmon       &emsp;   (Quantify expression)
 3. Alternatively, you could directly create a new working conda environment using the following command 
 (make sure you have annotation.yml file in your working directory):
 > conda env create -n annotation --file annotation.yml
@@ -46,7 +45,7 @@ The input files should be in the annotation directory
 
 ### Instruction for the pipeline
 1. Make sure you have the environment (with all packages) ready.
-2. Make sure you have all the input files ready.
+2. Download the input files into the cloned directory.
 3. Execute the command and follow the prompt:
 > bash start_pipeline.sh
 4. Follow the instructions to enter the file names.
